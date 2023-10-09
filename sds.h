@@ -44,7 +44,8 @@ extern const char *SDS_NOINIT;
 #include <stdarg.h>
 #include <stdint.h>
 
-#ifdef _WIN64
+#if defined(_WIN64) && !defined(_SSIZE_T_DEFINED)
+#define _SSIZE_T_DEFINED
 typedef long long ssize_t;
 #endif
 
